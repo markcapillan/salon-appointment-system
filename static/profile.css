@@ -1,0 +1,372 @@
+/* ===============================
+   THEME VARIABLES
+================================ */
+:root {
+  --primary: #8c2bee;
+  --primary-dark: #6b1cb0;
+
+  --bg-light: #f7f6f8;
+  --bg-dark: #191022;
+
+  --surface-light: #ffffff;
+  --surface-dark: #231a2e;
+
+  --text-main: #141118;
+  --text-secondary: #756189;
+
+  --border-light: #e0dbe6;
+  --border-dark: #2f253b;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+.dark {
+  --bg-light: var(--bg-dark);
+  --surface-light: var(--surface-dark);
+  --text-main: #ffffff;
+  --text-secondary: rgba(255,255,255,0.6);
+  --border-light: var(--border-dark);
+}
+
+/* ===============================
+   BASE STYLES
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", "Noto Sans", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* ===============================
+   HEADER / NAVBAR
+================================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--surface-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-left: 2rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* ===============================
+   MAIN LAYOUT
+================================ */
+main {
+  flex: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ===============================
+   PAGE HEADER
+================================ */
+.page-title h1 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.page-title p {
+  margin-top: 0.25rem;
+  color: var(--text-secondary);
+}
+
+/* ===============================
+   CARD BASE
+================================ */
+.card {
+  background: var(--surface-light);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-card {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #fff;
+  box-shadow: var(--shadow-md);
+  margin: 0 auto 1rem;
+}
+
+.profile-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.member-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #d97706;
+}
+
+/* ===============================
+   LOYALTY CARD
+================================ */
+.loyalty-points {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+}
+
+/* ===============================
+   SIDEBAR NAV
+================================ */
+.sidebar-nav a,
+.sidebar-nav button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  border-left: 4px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.sidebar-nav a.active {
+  border-left-color: var(--primary);
+  background: rgba(140,43,238,0.08);
+  color: var(--primary);
+}
+
+.sidebar-nav a:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.sidebar-nav button {
+  color: #ef4444;
+  border: none;
+  text-align: left;
+}
+
+/* ===============================
+   CONTENT AREA
+================================ */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ===============================
+   FORM STYLES
+================================ */
+.form-section-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-section-body {
+  padding: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: #fff;
+  font-size: 0.875rem;
+}
+
+.dark input {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(140,43,238,0.35);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+/* ===============================
+   TOGGLE SWITCH
+================================ */
+.toggle {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background: #d1d5db;
+  border-radius: var(--radius-full);
+}
+
+.toggle::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+.toggle.active {
+  background: var(--primary);
+}
+
+.toggle.active::after {
+  transform: translateX(24px);
+}
+
+/* ===============================
+   TABLE
+================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: rgba(0,0,0,0.04);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+th, td {
+  padding: 1rem 1.25rem;
+}
+
+tbody tr {
+  border-top: 1px solid var(--border-light);
+}
+
+tbody tr:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* ===============================
+   STATUS BADGES
+================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.7rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+}
+
+.badge.upcoming {
+  background: rgba(140,43,238,0.1);
+  color: var(--primary);
+}
+
+.badge.completed {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.badge.canceled {
+  background: #f3f4f6;
+  color: #6b7280;
+}

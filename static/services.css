@@ -1,0 +1,112 @@
+/* ===============================
+   GLOBAL RESETS & SMOOTHING
+================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===============================
+   SCROLLBAR STYLING
+================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+}
+
+/* Hide scrollbar utility (used in category chips) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===============================
+   TEXT CLAMP (Tailwind fallback)
+================================ */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===============================
+   MATERIAL ICON FIXES
+================================ */
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  vertical-align: middle;
+}
+
+/* ===============================
+   CARD HOVER POLISH
+================================ */
+.group:hover img {
+  transform: scale(1.05);
+}
+
+.group img {
+  transition: transform 0.3s ease;
+}
+
+/* ===============================
+   BUTTON INTERACTIONS
+================================ */
+button {
+  transition: background-color 0.2s ease,
+              box-shadow 0.2s ease,
+              transform 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ===============================
+   STICKY SUMMARY SAFETY
+================================ */
+@media (min-width: 1024px) {
+  .sticky {
+    align-self: flex-start;
+  }
+}
+
+/* ===============================
+   IMAGE FALLBACK
+================================ */
+img {
+  object-fit: cover;
+  background-color: #e5e7eb;
+}
+
+/* ===============================
+   LINK RESET
+================================ */
+a {
+  text-decoration: none;
+  color: inherit;
+}
