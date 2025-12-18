@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Appointment Booking - Date &amp; Time</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c2bee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                        "card-dark": "#251b2e",
+                        "text-dark": "#e3dbe8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-text-dark antialiased transition-colors duration-200">
+<!-- Main Container -->
+<div class="relative flex min-h-screen flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-solid border-slate-200 dark:border-white/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-3 lg:px-10">
+<div class="flex items-center gap-4">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">content_cut</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Regine's Salon</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-full p-2 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-white/5">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-9 w-9 ring-2 ring-white dark:ring-white/10 cursor-pointer" data-alt="User profile avatar showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAf1IoRJFLQ1GpnHH6mybrEgSRGvn6NG7XcAObM0uz0hFEBl5GMkE9l_Zk8jBJgfsC3ObKSxTs1rZCBzsRNgmlny0Qqzey62DBgSBJq8QchSSLpJ5_rrBNJSQRWZ2cUIUujpRY-XUY9ygiyUJv61k4CEyzzDw40tvFLhabsXDk23x7r6KvQvB93fOtKROiq-744H57bN2GjKxPEJLJi156un_qoJf7ESrQYUMMOtw5fREXzSD19ZxIhDakmXkkpWNvIV29xNrWd8Q");'>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="flex-1 w-full max-w-7xl mx-auto p-4 md:p-6 lg:p-10">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Left Column: Interaction Area -->
+<div class="flex-1 flex flex-col gap-8">
+<!-- Progress Bar -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<p class="text-sm font-semibold text-primary dark:text-primary">Step 2 of 4</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">50% Completed</p>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-200 dark:bg-white/10 overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500 ease-out" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Page Heading -->
+<div>
+<h1 class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 dark:text-white">
+                            When would you like to come in?
+                        </h1>
+<p class="mt-2 text-slate-500 dark:text-slate-400">Choose a date and time that works best for you.</p>
+</div>
+<!-- Stylist Selection (Chips) -->
+<div class="space-y-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Select Professional (Optional)</h3>
+<div class="flex gap-3 flex-wrap">
+<!-- Option: Any Stylist -->
+<button class="group flex items-center gap-3 rounded-xl border border-transparent bg-primary text-white px-4 py-2 transition-all shadow-lg shadow-primary/25">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+<span class="material-symbols-outlined text-lg">groups</span>
+</div>
+<span class="text-sm font-semibold">Any Stylist</span>
+<span class="material-symbols-outlined text-sm ml-1">check</span>
+</button>
+<!-- Option: Sarah -->
+<button class="group flex items-center gap-3 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-card-dark px-4 py-2 hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-white/5 transition-all">
+<div class="h-8 w-8 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Profile picture of Sarah the stylist" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxaZia4W43l_oG6Xwv6CK9vj5hjocmlUgJdvG5Anx6WLEdYjQ5xm2K5WU285ZOioK1mzxQz1_kdDB7t-aXAGx5leF9-3AYdSvI86MAs9hc2Enc00qSQnUnyZSh73rGEfrB9508hDDQ7z5vLlXyMBJowBfVA5110Pm63EWlgsXeQ9ezQkMHjh_uDjP6_WFT9AGV7QsMW80WnMqayvIehTgC87ikdyVSdFETnoBrAgEnZzMIgfsik4w__USIoFvWbAIWRW8jP1HRJ44');"></div>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Sarah</span>
+</button>
+<!-- Option: Mike -->
+<button class="group flex items-center gap-3 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-card-dark px-4 py-2 hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-white/5 transition-all">
+<div class="h-8 w-8 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Profile picture of Mike the stylist" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6qcBImTVHquXhM4X-sl6aksb6BaWRjakFmBLdc-92WV6RVSbRW-irAiW1bukzWqvSEMYJy7DLxr5H2pELIvyfvXBBlMkLdJVqkC2ao_qMuDWwFVewEKCgwPO7aYN02RpA5WoQKuLVWW2u8RbuByex0gLtfcvgrSYjwHutthPOFa92O_FFfLDk8avPKpyLoLn6PexuZAhs-fsKrQtHd075TXXPE9-7oDpiOeS2EycnreSm5FIwmDy5_GGTUiC9PfaM24YXQLxj8q0');"></div>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Mike</span>
+</button>
+<!-- Option: Jessica -->
+<button class="group flex items-center gap-3 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-card-dark px-4 py-2 hover:border-primary/50 hover:bg-slate-50 dark:hover:bg-white/5 transition-all">
+<div class="h-8 w-8 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Profile picture of Jessica the stylist" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5BzpiwqLvwQXWQs0q0n1tCf_MAXkLiolUUSRYSpKWRS5P8hGEr408dfwxVBUoAIJJG7Z3P1qCz8NxAjBt-tMaxTrGqizthxw7CrmMELwajabWB3t2FM4j4e9Vo2xQGWmPtxDagoaS7XcG9Sv1MdiVZjh4eV6mTKUjis9n3RPaud3LWez_jJjqTIUp3xDNY0LnN3onyHmwFiiPuF0lN1mYwwfjewVcn8pQ93zbTJN7pZZTNcixRe6PB_9k4QfdaUlL5NhGj3VUqO0');"></div>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Jessica</span>
+</button>
+</div>
+</div>
+<!-- Calendar & Time Selection Container -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+<!-- Calendar Section -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Select Date</h3>
+<div class="flex items-center gap-2">
+<button class="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<span class="text-sm font-semibold text-slate-900 dark:text-white min-w-[100px] text-center">October 2023</span>
+<button class="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-card-dark p-4 shadow-sm">
+<!-- Days Header -->
+<div class="grid grid-cols-7 mb-2">
+<div class="text-center text-xs font-medium text-slate-400 py-2">Su</div>
+<div class="text-center text-xs font-medium text-slate-400 py-2">Mo</div>
+<div class="text-center text-xs font-medium text-slate-400 py-2">Tu</div>
+<div class="text-center text-xs font-medium text-slate-400 py-2">We</div>
+<div class="text-center text-xs font-medium text-slate-400 py-2">Th</div>
+<div class="text-center text-xs font-medium text-slate-400 py-2">Fr</div>
+<div class="text-center text-xs font-medium text-slate-400 py-2">Sa</div>
+</div>
+<!-- Days Grid -->
+<div class="grid grid-cols-7 gap-y-2 gap-x-1">
+<!-- Empty/Prev Month -->
+<div class="aspect-square"></div>
+<div class="aspect-square"></div>
+<!-- Days -->
+<!-- Past/Disabled -->
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-300 dark:text-slate-600 cursor-not-allowed" disabled="">1</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-300 dark:text-slate-600 cursor-not-allowed" disabled="">2</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-300 dark:text-slate-600 cursor-not-allowed" disabled="">3</button>
+<!-- Available -->
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">4</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">5</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">6</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">7</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">8</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">9</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">10</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">11</button>
+<!-- Selected -->
+<button class="aspect-square flex flex-col items-center justify-center rounded-lg bg-primary text-white shadow-lg shadow-primary/30 transform scale-105">
+<span class="text-sm font-bold">12</span>
+</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">13</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">14</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">15</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">16</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">17</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">18</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">19</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">20</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">21</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">22</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">23</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">24</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">25</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">26</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">27</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">28</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">29</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">30</button>
+<button class="aspect-square flex items-center justify-center rounded-lg text-sm text-slate-700 dark:text-slate-200 hover:bg-primary/10 hover:text-primary transition-colors">31</button>
+</div>
+</div>
+</div>
+<!-- Time Slots Section -->
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Available Slots</h3>
+<div class="flex-1 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-card-dark p-6 shadow-sm overflow-y-auto max-h-[400px]">
+<!-- Morning -->
+<div class="mb-6">
+<div class="flex items-center gap-2 mb-3 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">wb_sunny</span>
+<span class="text-xs font-semibold uppercase tracking-wider">Morning</span>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">09:00 AM</button>
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">09:30 AM</button>
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">10:00 AM</button>
+<button class="rounded-lg border border-transparent bg-primary text-white py-2 text-sm font-medium shadow-md shadow-primary/25">10:30 AM</button>
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">11:00 AM</button>
+<button class="rounded-lg border border-slate-100 dark:border-white/5 bg-slate-50 dark:bg-white/5 py-2 text-sm font-medium text-slate-300 dark:text-slate-600 cursor-not-allowed decoration-slice" disabled="">11:30 AM</button>
+</div>
+</div>
+<!-- Afternoon -->
+<div class="mb-6">
+<div class="flex items-center gap-2 mb-3 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">light_mode</span>
+<span class="text-xs font-semibold uppercase tracking-wider">Afternoon</span>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">12:00 PM</button>
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">12:30 PM</button>
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">01:00 PM</button>
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">01:30 PM</button>
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">02:00 PM</button>
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">03:30 PM</button>
+</div>
+</div>
+<!-- Evening -->
+<div>
+<div class="flex items-center gap-2 mb-3 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-lg">nights_stay</span>
+<span class="text-xs font-semibold uppercase tracking-wider">Evening</span>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<button class="rounded-lg border border-slate-100 dark:border-white/5 bg-slate-50 dark:bg-white/5 py-2 text-sm font-medium text-slate-300 dark:text-slate-600 cursor-not-allowed" disabled="">05:00 PM</button>
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">05:30 PM</button>
+<button class="rounded-lg border border-slate-200 dark:border-white/10 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all">06:00 PM</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary & Actions -->
+<div class="w-full lg:w-[360px] flex-shrink-0">
+<div class="sticky top-28 flex flex-col gap-6">
+<!-- Summary Card -->
+<div class="rounded-2xl bg-white dark:bg-card-dark p-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-white/5">
+<h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-white">Booking Summary</h3>
+<!-- Service Item -->
+<div class="flex gap-4 border-b border-dashed border-slate-200 dark:border-white/10 pb-4">
+<div class="h-14 w-14 flex-shrink-0 rounded-lg bg-cover bg-center" data-alt="Image of a woman getting a haircut" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7YcdoW7m0qUHWVAvfPCpQ5Ta-iNCAAxs45QsGaVZ66VOmfMClF4Lhq0vR8_P-D2Hb_y6zsvuV3pSz9RFd4r1VC0WX31ro82G-oErKSD6hVDduE_dlphdR_0R_dw8eu1iIFdgrNIuo3v69rj6knepKjpXZ3fT-WRNmUcKm09A_1m2DHVI0yMbgpdIOpUI0WR36FnB0Q9ixNnUAjxJm3VR5735obHYoE1OlqaQ_Mxu7HfXmc8191T0v_0IzTXxr5a333MSPKHoSTgY');"></div>
+<div>
+<h4 class="font-semibold text-slate-900 dark:text-white">Women's Haircut</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">with Wash &amp; Blowdry</p>
+<div class="mt-1 flex items-center gap-1 text-xs font-medium text-primary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>1 hr 30 min</span>
+</div>
+</div>
+</div>
+<!-- Details List -->
+<div class="py-4 space-y-3">
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">Date</span>
+<span class="font-medium text-slate-900 dark:text-white">Oct 12, 2023</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">Time</span>
+<span class="font-medium text-slate-900 dark:text-white">10:30 AM</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">Stylist</span>
+<span class="font-medium text-slate-900 dark:text-white">Any Stylist</span>
+</div>
+</div>
+<!-- Total -->
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-white/10 pt-4">
+<span class="text-base font-semibold text-slate-500 dark:text-slate-400">Total Price</span>
+<span class="text-2xl font-black text-slate-900 dark:text-white">$85.00</span>
+</div>
+<!-- Actions -->
+ <a href="personal_details.html">
+<div class="mt-6 flex flex-col gap-3">
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3.5 text-sm font-bold text-white shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all active:scale-[0.98]">
+                                    Continue
+                                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+ </a>
+
+<a href="Services.html">
+<button class="w-full rounded-xl border border-transparent py-3 text-sm font-bold text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white transition-colors">
+                                    Back to Services
+                                </button>
+</a>
+
+</div>
+</div>
+<!-- Help Box -->
+<div class="rounded-xl bg-primary/5 p-4 border border-primary/10">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<div>
+<p class="text-sm font-semibold text-slate-900 dark:text-white">Free Cancellation</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">You can reschedule or cancel up to 24 hours before your appointment.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

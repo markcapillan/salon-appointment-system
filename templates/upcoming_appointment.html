@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Appointments - Luxe Salon</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c2bee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                        "card-light": "#ffffff",
+                        "card-dark": "#2d2438",
+                        "text-main": "#141118",
+                        "text-muted": "#756189",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .material-symbols-filled {
+            font-family: 'Material Symbols Outlined';
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col transition-colors duration-200">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-white dark:bg-card-dark border-b border-[#f2f0f4] dark:border-white/10 px-6 py-4">
+<div class="max-w-6xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3 text-text-main dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">spa</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Luxe Salon</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="Services.html">Book New Appointment</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">History</a>
+<a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="profile.html">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+<div class="h-10 w-10 rounded-full bg-gray-200 bg-center bg-cover border-2 border-white dark:border-primary/30 shadow-sm" data-alt="User profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhsYeeBk5Ovp1axe_dU5th2IOqluOA8CvrOkwcH4m2m2TBeYFf2lpHPxd6VHcYaT0znRmv2QArBDsCJRnGUhkSFUsEZza4sKS2KbtXHrDXKF86pk7HUjgcrqUSig31kawo1wL8xs9C2PbsjYcGUc4i2DLCyyq1WgOc1D0klzJpnmNjj791rWVHC2pcR9DfB2MqyckVBoBnUZ0E2F0AZvR2WMsvidxqAmIMPEuJIMZKoMT8adQZZT6flrN1jp9vORqsqri9unp40Iw');"></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-6xl mx-auto px-4 md:px-6 py-8">
+<!-- Page Header & Main Action -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+<div class="flex flex-col gap-2">
+<h1 class="text-text-main dark:text-white text-3xl md:text-4xl font-black tracking-tight">My Appointments</h1>
+<p class="text-text-muted dark:text-gray-400 text-base">Manage your upcoming salon services</p>
+</div>
+<a href="Services.html">
+<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary/90 text-white gap-2 font-bold shadow-lg shadow-primary/20 transition-all hover:scale-[1.02]">
+<span class="material-symbols-outlined">add</span>
+<span>Book New Appointment</span>
+</button>
+</a>
+
+</div>
+<!-- Next Appointment Hero Section -->
+<section class="mb-12">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-filled text-primary">stars</span>
+<h2 class="text-text-main dark:text-white text-xl font-bold">Next Appointment</h2>
+</div>
+<div class="bg-white dark:bg-card-dark rounded-2xl shadow-sm border border-primary/10 overflow-hidden relative group">
+<!-- Decorative background tint -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row">
+<!-- Left: Details -->
+<div class="flex-1 p-6 md:p-8 flex flex-col justify-between gap-6">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wider border border-green-200 dark:border-green-800">Confirmed</span>
+<span class="text-text-muted dark:text-gray-400 text-sm font-medium">Ref: #88321</span>
+</div>
+<h3 class="text-2xl md:text-3xl font-bold text-text-main dark:text-white mb-4">Full Balayage &amp; Haircut</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="flex items-center gap-3 text-text-main dark:text-gray-200">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<span class="font-semibold">Fri, Oct 24, 2023</span>
+</div>
+<div class="flex items-center gap-3 text-text-main dark:text-gray-200">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<span class="font-semibold">2:00 PM (2h 30m)</span>
+</div>
+<div class="flex items-center gap-3 text-text-main dark:text-gray-200">
+<span class="material-symbols-outlined text-primary">payments</span>
+<span>$150.00</span>
+</div>
+<div class="flex items-center gap-3 text-text-main dark:text-gray-200">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="truncate">Luxe Salon, 123 Fashion Ave</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-4 border-t border-gray-100 dark:border-white/5">
+<div class="h-12 w-12 rounded-full bg-gray-200 bg-center bg-cover" data-alt="Stylist portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2GS6rXURVqQU6k_47DBG1U457b1MSuI2v5M5X15uB6aQYCENEQEJ0s7_u7kXSfGk43bHsH4FZflkp53-lqiQ014gwo-3xEtSgh4MxvL7CI9oOM2q7Q3hQ3oupDQTPz1qq_KY0oe19Nw4BYcc7re8j0ksrtI9zzv30oxKdML_dGIn04uq13JLnXhsHaKg4N26GXo6vl_sjlDTW3dr_kZ7FvCxl-5_0KhPRdy-7gpLuYFhTppWLlWwUDn19ntoONpon6lUehcOdCJI');"></div>
+<div>
+<p class="text-xs text-text-muted dark:text-gray-400 uppercase font-semibold">Your Stylist</p>
+<p class="text-text-main dark:text-white font-bold">Sarah Jenkins</p>
+</div>
+<button class="ml-auto text-primary text-sm font-medium hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">chat</span>
+                                Message
+                            </button>
+</div>
+</div>
+<!-- Right: Timer & Actions -->
+<div class="lg:w-[400px] bg-primary/5 dark:bg-white/5 border-l border-primary/10 dark:border-white/5 p-6 md:p-8 flex flex-col justify-center gap-8">
+<div>
+<p class="text-center text-text-muted dark:text-gray-400 text-sm font-medium mb-4 uppercase tracking-widest">Time until appointment</p>
+<!-- Timer Component -->
+<div class="flex gap-2 justify-center">
+<div class="flex flex-col items-center gap-1">
+<div class="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-lg bg-white dark:bg-card-dark shadow-sm text-text-main dark:text-white text-xl font-bold border border-gray-100 dark:border-white/10">03</div>
+<span class="text-xs text-text-muted">Days</span>
+</div>
+<span class="text-2xl font-bold text-primary self-start mt-2">:</span>
+<div class="flex flex-col items-center gap-1">
+<div class="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-lg bg-white dark:bg-card-dark shadow-sm text-text-main dark:text-white text-xl font-bold border border-gray-100 dark:border-white/10">04</div>
+<span class="text-xs text-text-muted">Hrs</span>
+</div>
+<span class="text-2xl font-bold text-primary self-start mt-2">:</span>
+<div class="flex flex-col items-center gap-1">
+<div class="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-lg bg-white dark:bg-card-dark shadow-sm text-text-main dark:text-white text-xl font-bold border border-gray-100 dark:border-white/10">12</div>
+<span class="text-xs text-text-muted">Mins</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full py-2.5 px-4 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all bg-white dark:bg-transparent">
+                                Reschedule Booking
+                            </button>
+<button class="w-full py-2.5 px-4 rounded-lg text-text-muted hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 text-sm font-medium transition-colors">
+                                Cancel Appointment
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming List -->
+<section>
+<div class="flex items-center justify-between mb-6 px-1">
+<h2 class="text-text-main dark:text-white text-[22px] font-bold leading-tight">Upcoming Appointments</h2>
+<button class="text-primary text-sm font-medium hover:underline">View History</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-card-dark rounded-xl p-5 shadow-sm border border-[#f2f0f4] dark:border-white/5 flex flex-col gap-4 hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<div class="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-0.5 rounded text-xs font-bold uppercase border border-orange-200 dark:border-orange-800">Waitlist</div>
+<button class="text-text-muted hover:text-primary"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<div>
+<h4 class="text-lg font-bold text-text-main dark:text-white mb-1">Manicure &amp; Pedicure</h4>
+<p class="text-text-muted dark:text-gray-400 text-sm">Nov 12, 10:00 AM</p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-gray-50 dark:border-white/5 mt-auto">
+<div class="h-8 w-8 rounded-full bg-gray-200 bg-center bg-cover" data-alt="Stylist portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZOgVk8yV04rF9tE-3HmFL59-WtFfUPctymzEMSQm45DndnSBon478mcBXf2lM5uHzx8hYqWrfUR_bO9UB_B4N-tHG9RejMyiaefGgfEVDlrhiBqr0FStSn0LwFyTFJgvQybCBKoIR7tP74lzJS0Sgi1ctPuwZzg4PzU1flPvfz9akZ_HSvoOMI4llkvZy4fr7Iba4F2t6SeXwPJXvHXmJALQqCEfqDl3XBos2O9DDvxQ61gefzbB2gKSWxqkbWPqqde5tSQRF3Q4');"></div>
+<div class="text-sm">
+<span class="text-text-muted dark:text-gray-500 block text-xs">Stylist</span>
+<span class="text-text-main dark:text-gray-200 font-medium">Emily R.</span>
+</div>
+<div class="ml-auto text-sm font-bold text-text-main dark:text-white">$85</div>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 py-2 text-sm font-medium text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">Reschedule</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-card-dark rounded-xl p-5 shadow-sm border border-[#f2f0f4] dark:border-white/5 flex flex-col gap-4 hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start">
+<div class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-0.5 rounded text-xs font-bold uppercase border border-green-200 dark:border-green-800">Confirmed</div>
+<button class="text-text-muted hover:text-primary"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<div>
+<h4 class="text-lg font-bold text-text-main dark:text-white mb-1">Root Touch Up</h4>
+<p class="text-text-muted dark:text-gray-400 text-sm">Dec 05, 4:30 PM</p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-gray-50 dark:border-white/5 mt-auto">
+<div class="h-8 w-8 rounded-full bg-gray-200 bg-center bg-cover" data-alt="Stylist portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJJatzWAl2bmYYHNYHVXbdUvL3DPu7Ha_WGLeOFv1LhzMymo61ohJED5_Mgj-odLgvsS0_mkyTOqu7Dfslyyk7r_gU8CmErIsEQ0tEIXg6SAXxLLglpCKRttzofunpDPc2fUZSX_-534dWX1d0QpreCYyZPmADG2bxzlDV8T6objbPFw1l76FOG_QcE-qnsbuejliU4OFfq8fiAB0Md7SeEZ5EWK-UIl72YcVou42FErMw2wlSiRKtfU7VWxDUvFpiC_FtrEtR4Q0');"></div>
+<div class="text-sm">
+<span class="text-text-muted dark:text-gray-500 block text-xs">Stylist</span>
+<span class="text-text-main dark:text-gray-200 font-medium">Sarah J.</span>
+</div>
+<div class="ml-auto text-sm font-bold text-text-main dark:text-white">$120</div>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 py-2 text-sm font-medium text-primary border border-primary/30 rounded-lg hover:bg-primary/5 transition-colors">Reschedule</button>
+</div>
+</div>
+<!-- Empty State Placeholder (Visual suggestion if list is short) -->
+<div class="bg-gray-50 dark:bg-white/5 rounded-xl p-5 border border-dashed border-gray-300 dark:border-gray-700 flex flex-col items-center justify-center gap-4 text-center min-h-[200px]">
+<div class="size-12 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center text-text-muted">
+<span class="material-symbols-outlined">event_available</span>
+</div>
+<div>
+<p class="text-text-main dark:text-white font-medium">Plan ahead!</p>
+<p class="text-sm text-text-muted dark:text-gray-400">Book your holiday looks now.</p>
+</div>
+<button class="text-primary text-sm font-bold hover:underline">Browse Services</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button: Assistant -->
+<button class="fixed bottom-8 right-8 h-14 w-14 rounded-full bg-primary text-white shadow-xl hover:bg-primary/90 flex items-center justify-center transition-transform hover:scale-110 group z-50">
+<span class="material-symbols-outlined text-2xl group-hover:hidden">smart_toy</span>
+<span class="material-symbols-outlined text-2xl hidden group-hover:block">chat</span>
+<span class="absolute right-0 top-0 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-400"></span>
+</span>
+</button>
+</body></html>

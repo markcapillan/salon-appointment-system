@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Summary - Salon Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c2bee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-[#191022]/80 backdrop-blur-md px-4 md:px-10 py-3">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Salon Assistant</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-slate-100 dark:border-slate-700" data-alt="User profile avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVFBYN79jLs2R5lAEEQhQt0NWfzZkkE_bJMEPzhhnnVSmuuFZOht20d7zXE3BjZaSCDoNK9SPfloH9FgkOFJwzL2IqK19b4u9Gu3gkO2QRCXwMTrYE3Ug8zqqqvslAPFuDsAu8TIGcKo70vtmVfnWiShEXXe2-l3JyWYLvQsw1CnE6KrsBi7WtQDqAKKYkCigI6SqaQy-Y6VpVN1UBbffD_G6MywTjPpAuWb1CbBhhw8VgUGSPGCgZcilpZD6cmYHjxeHTpptbyS4");'></div>
+</div>
+</header>
+<main class="layout-container flex h-full grow flex-col px-4 md:px-10 lg:px-40 py-8">
+<div class="mx-auto w-full max-w-6xl">
+<!-- Page Heading -->
+<div class="mb-8">
+<h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Finalize Your Booking</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-2 text-base">Review your appointment details and complete payment.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- LEFT COLUMN: Payment & Details -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<!-- Appointment Recap Section -->
+<section class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">event_available</span>
+                                Appointment Details
+                            </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+<div class="flex flex-col gap-1">
+<p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Date</p>
+<p class="text-slate-900 dark:text-white font-medium">Mon, Oct 24</p>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Time</p>
+<p class="text-slate-900 dark:text-white font-medium">2:00 PM</p>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Stylist</p>
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Stylist portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXEdImcCTBgiBDB75n5QIMGbeUSgT8YUn9e1Q2SKdJdL-RsaiXcCS-LZRSOi7CxjdU2BOo3uq1fIdoYDBJ6du_5nC4srk0ExMJncwntFIE_BgzEfboQ_O-r_EX6tBqCizNInP9b0QCYnY7Kw_2ifimMMqj0R-qxDnx7sttkSRIsGC43Z-AOz9-k0P7cUCjoXmvn1l7fxlTKxgjSATObj-VSSNVndKK2K-qVfCURMtYvaW0ppg_gcq8uAHeYmyE-ZdoGVZppmz4CHI');"></div>
+<p class="text-slate-900 dark:text-white font-medium">Sarah J.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Method Section -->
+<section>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-5">Payment Method</h3>
+<div class="flex flex-col gap-4">
+<!-- Option 1: Pay Online (Selected) -->
+<div class="relative rounded-xl border-2 border-primary bg-primary/5 dark:bg-primary/10 p-5 transition-all cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-5 rounded-full border-2 border-primary bg-primary">
+<div class="size-2 rounded-full bg-white"></div>
+</div>
+<span class="font-bold text-slate-900 dark:text-white text-lg">Pay Online</span>
+</div>
+<div class="flex gap-2 text-slate-400">
+<span class="material-symbols-outlined" style="font-size: 24px;">credit_card</span>
+<span class="material-symbols-outlined" style="font-size: 24px;">account_balance_wallet</span>
+</div>
+</div>
+<!-- Credit Card Form -->
+<div class="mt-4 grid gap-4 pl-8 border-t border-primary/20 pt-4">
+<div class="col-span-2">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Card Number</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-lg">lock</span>
+<input class="w-full rounded-lg border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 pl-10 py-2.5 text-sm focus:border-primary focus:ring-primary dark:text-white shadow-sm placeholder-slate-400" placeholder="0000 0000 0000 0000" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Expiry Date</label>
+<input class="w-full rounded-lg border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2.5 text-sm focus:border-primary focus:ring-primary dark:text-white shadow-sm placeholder-slate-400" placeholder="MM / YY" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">CVC</label>
+<div class="relative">
+<input class="w-full rounded-lg border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2.5 text-sm focus:border-primary focus:ring-primary dark:text-white shadow-sm placeholder-slate-400" placeholder="123" type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-lg cursor-help">help</span>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">Cardholder Name</label>
+<input class="w-full rounded-lg border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2.5 text-sm focus:border-primary focus:ring-primary dark:text-white shadow-sm placeholder-slate-400" placeholder="Name on card" type="text"/>
+</div>
+</div>
+</div>
+<!-- Option 2: Pay at Salon -->
+<div class="group relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 transition-all hover:border-primary/50 cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-5 rounded-full border border-slate-300 dark:border-slate-600 group-hover:border-primary"></div>
+<div>
+<span class="font-bold text-slate-900 dark:text-white text-lg block">Pay at Salon</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">No upfront charge. Pay after your service.</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400" style="font-size: 24px;">storefront</span>
+</div>
+</div>
+</div>
+</section>
+<a href="appointment_confirm.html">
+<div class="mt-4 flex flex-col gap-4">
+<button class="w-full rounded-full bg-primary hover:bg-primary/90 text-white font-bold text-lg py-4 shadow-lg shadow-primary/25 transition-all transform active:scale-[0.98]">
+                                Pay &amp; Book $76.50
+                            </button>
+</a>
+
+<a class="text-center text-sm font-medium text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 transition-colors" href="#">Modify Services or Go Back</a>
+</div>
+</div>
+<!-- RIGHT COLUMN: Order Summary -->
+<div class="lg:col-span-5">
+<div class="sticky top-24 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl shadow-slate-200/50 dark:shadow-none overflow-hidden">
+<div class="bg-slate-50 dark:bg-slate-800/50 px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Order Summary</h3>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<!-- Service List -->
+<div class="flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="flex gap-4 items-start">
+<div class="h-16 w-16 shrink-0 rounded-lg bg-cover bg-center" data-alt="Women's haircut image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdSdIH0uClBMRwfflC6YfnY-Yjdxfnst87izVjrJvuaVspAiHFH8Y3W35f3NwP6m00U0tCrt_32RrLnWoFDpRZjq2l3QS98BBpE_cWt0nwSFWy-oMDO_moEFrPu8xh-p_gMvWUVzw0qj2yvjvrHvinCeezRDyx-74Vb5MJlEEBfF_9tNZNSgjSvcOrcjQhxpsVB9XsQGiid2zEp7QuEM58iNgSo2K1pp3JDH118DjQIRFnTUIBJvafaXSO9M6zKwKsVQVAPUeZ6hY');"></div>
+<div class="flex flex-1 flex-col justify-between h-full">
+<div>
+<p class="font-bold text-slate-900 dark:text-white text-sm leading-tight">Women's Cut &amp; Blowdry</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">60 mins</p>
+</div>
+<p class="font-semibold text-slate-900 dark:text-white text-sm">$65.00</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 items-start">
+<div class="h-16 w-16 shrink-0 rounded-lg bg-cover bg-center" data-alt="Hair conditioning treatment image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUUpaVG47k-p6H4IF09Ia_eGeMKGgTpf_KxzGN2bRIHsJ8gFs62MOuLvilbJnwx72SJ_YaBPjo6QOE4P1R7ykzMxJwd4lEmCcoN4A3NvX8ImTLA72zIAIEY3AEWsw4bbej-rfEySKly0gTjTd2Z7pDO9RdyM6AZlEpT1p9LowzDJNtA7WiLutpmpvZzfR682gtZ4FUOrbapiqkZQe1rmZlauAF_Vf8K1RSKR9pOSDgv9S7JJy1z5DVQ7Ej6Q6v_cPyuXqUe7gd3Mk');"></div>
+<div class="flex flex-1 flex-col justify-between h-full">
+<div>
+<p class="font-bold text-slate-900 dark:text-white text-sm leading-tight">Deep Conditioning</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">30 mins</p>
+</div>
+<p class="font-semibold text-slate-900 dark:text-white text-sm">$20.00</p>
+</div>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 block">Promo Code</label>
+<div class="flex gap-2">
+<input class="flex-1 rounded-lg border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-sm focus:border-primary focus:ring-primary dark:text-white uppercase font-medium" type="text" value="WELCOME10"/>
+<button class="rounded-lg bg-primary/10 hover:bg-primary/20 text-primary font-semibold px-4 py-2 text-sm transition-colors">Apply</button>
+</div>
+<div class="flex items-center gap-1 mt-2 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span>
+                                        Code applied successfully!
+                                    </div>
+</div>
+<!-- Totals -->
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-600 dark:text-slate-400">Subtotal</span>
+<span class="font-medium text-slate-900 dark:text-white">$85.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-600 dark:text-slate-400">Discount (10%)</span>
+<span class="font-medium text-emerald-600 dark:text-emerald-400">-$8.50</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-slate-100 dark:border-slate-800 mt-1">
+<span class="text-base font-bold text-slate-900 dark:text-white">Total Due</span>
+<span class="text-xl font-bold text-primary">$76.50</span>
+</div>
+</div>
+<!-- Security Badge -->
+<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-3 flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined" style="font-size: 16px;">lock</span>
+                                    Secure SSL Encrypted Checkout
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Regine's Salon</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c2bee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#141118] dark:text-white overflow-x-hidden transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-[#191022]/90 backdrop-blur-md border-b border-[#f2f0f4] dark:border-gray-800 px-6 py-3">
+<div class="layout-container mx-auto max-w-7xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">spa</span>
+</div>
+<h2 class="text-[#141118] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Regine's Salon</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-9">
+<a class="text-[#141118] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="templates/upcoming_appointment.html">My Appointments</a>
+<a class="text-[#141118] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="templates/profile.html">Profile</a>
+</div>
+<button class="flex items-center gap-2 cursor-pointer rounded-lg h-10 px-4 text-[#141118] dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm font-medium">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+<span>Login</span>
+</button>
+</nav>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="flex-1 flex flex-col items-center w-full pb-10">
+<!-- Hero Section -->
+<div class="w-full max-w-7xl px-4 md:px-6 py-6">
+<div class="relative overflow-hidden rounded-2xl bg-cover bg-center h-[320px] shadow-sm flex items-end p-8 md:p-12" data-alt="Abstract purple and pink gradient background representing luxury and calm" style='background-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHjVx4jisu1eWf6PgnFa4gy5A3Orh3HZaXif9YVCvR7IfvvxvRB-FPRsRTN35nxWpUjjHk4gXD0wNugJH7tvobt0N_CI0f4pdOYaWNzfo84SznIetzSgRrgm-3WBzsAJQddFCBK0QLgRS2yFeNLlgKfOi7NeyRbgi7JHL4RFWB47Gyowt-_Q5VTDqvJuUKTdY0V42jrut5ch-QbJlK4PL8y-DXqs1C1WrfUzrlzDe-wjCUnWJXBJGL3kl2Dt6daM2AVkjHeAJHSCc");'>
+<div class="relative z-10 w-full max-w-2xl">
+<h1 class="text-white text-3xl md:text-5xl font-black mb-2 tracking-tight">Select Your Experience</h1>
+<p class="text-gray-200 text-sm md:text-base font-medium mb-6">Explore our curated menu of hair, nail, and spa treatments tailored for you.</p>
+<!-- Search Bar within Hero -->
+<div class="flex w-full max-w-lg items-center rounded-lg bg-white p-1 shadow-lg">
+<div class="flex items-center justify-center pl-3 text-gray-400">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full bg-transparent border-none p-3 text-sm text-[#141118] placeholder:text-gray-400 focus:ring-0 focus:outline-none" placeholder="Search treatments (e.g., Balayage)" type="text"/>
+<button class="bg-primary hover:bg-primary/90 text-white rounded-md px-5 py-2 text-sm font-bold transition-colors">Search</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Two Column Layout: Services + Sticky Sidebar -->
+<div class="layout-container w-full max-w-7xl px-4 md:px-6 flex flex-col lg:flex-row gap-8 items-start">
+<!-- Left Column: Filters & Service List -->
+<div class="flex-1 w-full min-w-0">
+<!-- Chips / Filters -->
+<div class="flex gap-3 overflow-x-auto pb-4 scrollbar-hide mb-2">
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-[#141118] dark:bg-white text-white dark:text-[#141118] px-5 transition-transform active:scale-95 shadow-sm">
+<span class="text-sm font-medium">All Services</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary dark:hover:text-primary px-5 transition-colors shadow-sm">
+<span class="text-sm font-medium dark:text-gray-200">Haircuts</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary dark:hover:text-primary px-5 transition-colors shadow-sm">
+<span class="text-sm font-medium dark:text-gray-200">Coloring</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary dark:hover:text-primary px-5 transition-colors shadow-sm">
+<span class="text-sm font-medium dark:text-gray-200">Nails</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary dark:hover:text-primary px-5 transition-colors shadow-sm">
+<span class="text-sm font-medium dark:text-gray-200">Spa &amp; Facial</span>
+</button>
+</div>
+<!-- Services Grid -->
+<div class="flex flex-col gap-6">
+<!-- Card 1 -->
+<div class="group bg-white dark:bg-[#251a30] rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden transition-all hover:shadow-md">
+<div class="flex flex-col sm:flex-row h-full">
+<div class="w-full sm:w-48 md:w-64 h-48 sm:h-auto bg-cover bg-center shrink-0" data-alt="Woman with healthy shiny hair getting a haircut" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOxxW4n4H02VH0mAimzE13GVpAnt9AuQo1lKJWwPwwNkoeECrAgvtroIb0iVoinmtXIit9W0uB3ijBK5v9KgItprQbJoOyAaVKMXab2Ry-noEgW1Rxj-8Lo9Qx6MEEE5RCbZ2r06ZJRT15J0sPw0e9McLcwFJSjWv9Vhq-au2jMXC9u_-Pk4ThSYhR7egkFxIiaTV4Kx2eljuHerizoqKAfad4ax9H0JYHJaGMmg4Hvj7KlnvveHs8KKGxy28ylbQ2Y69ySjce6s0");'>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-[#141118] dark:text-white">Signature Cut &amp; Style</h3>
+<div class="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-800 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>60 min</span>
+</div>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                                            A precision cut customized to your face shape, followed by a relaxing shampoo, conditioning treatment, and a professional blow-dry finish.
+                                        </p>
+<!-- Add-ons Section -->
+<div class="mb-4 pt-3 border-t border-gray-100 dark:border-gray-700">
+<p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Enhance your service</p>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent transition-all" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/check:text-primary transition-colors">Deep Conditioning Mask (+$15)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent transition-all" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/check:text-primary transition-colors">Extended Scalp Massage (+$10)</span>
+</label>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xl font-bold text-[#141118] dark:text-white">$65.00</span>
+<button class="bg-primary hover:bg-[#7a25d0] text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors shadow-sm active:scale-95">
+                                            Select Service
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white dark:bg-[#251a30] rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden transition-all hover:shadow-md">
+<div class="flex flex-col sm:flex-row h-full">
+<div class="w-full sm:w-48 md:w-64 h-48 sm:h-auto bg-cover bg-center shrink-0" data-alt="Professional hair coloring application process" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALEhaEkc5f9vHPx-4zGyxmfm5FjUL4IEQ0MD3oBMoUxzIjov9sL3NRTC_yfmB-TtcnzB-c4i5klacVuTL7ZSv32tZgwWRfDjzfZUczVHxJAvwmLX2BL_SOhZlW0GZx5Fx4lx4_rZWzZAC1pqKX7UCCJ5Hf-j8VEbQ5epmNY-c_HrDIgMIlcCbKHLJUV0lKvYqWBpEbwMEPdwYc1kRsQxC_vUEmJH3uGd16Mjjg-mgWSizAIuADn12w9U--M643FDFJnljBA7cxttI");'>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-[#141118] dark:text-white">Full Balayage</h3>
+<div class="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-800 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>180 min</span>
+</div>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                                            Hand-painted highlights for a natural, sun-kissed look. Includes toner and a bond-protecting treatment to ensure hair health.
+                                        </p>
+<!-- Add-ons Section -->
+<div class="mb-4 pt-3 border-t border-gray-100 dark:border-gray-700">
+<p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Enhance your service</p>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent transition-all" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/check:text-primary transition-colors">Root Smudge (+$25)</span>
+</label>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xl font-bold text-[#141118] dark:text-white">$185.00</span>
+<button class="bg-primary hover:bg-[#7a25d0] text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors shadow-sm active:scale-95">
+                                            Select Service
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white dark:bg-[#251a30] rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden transition-all hover:shadow-md">
+<div class="flex flex-col sm:flex-row h-full">
+<div class="w-full sm:w-48 md:w-64 h-48 sm:h-auto bg-cover bg-center shrink-0" data-alt="Close up of a manicure with nail polish" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCp51JiTJQG1ZTIQGburXrGZQxpaH_mS5e3Tupr10C3yq3qm3ZRjWPxCvGrjWOPDNapqzuE6Y8z7DtgJ69brUt3tS4fABGErBAJQ97RsUKR_bb6U_g-dtv-VZoGGFXwwah2xCGfBNAXz9ycXZzCDDxEF4xGNGAgVl_uioRrrhiUpr67byzLVwi__Jl7HMbvvdt3kzx9Aqt1B61XHs0NgVF26fo-LPd7mE6lrCEVS5XrlpGhXaOJ7-IVW6FxH720jPAo-Q-MC_Ms8sQ");'>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-lg font-bold text-[#141118] dark:text-white">Gel Manicure</h3>
+<div class="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-800 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>45 min</span>
+</div>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                                            Includes nail shaping, cuticle care, and a long-lasting gel polish application in your choice of color.
+                                        </p>
+<!-- Add-ons Section -->
+<div class="mb-4 pt-3 border-t border-gray-100 dark:border-gray-700">
+<p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Enhance your service</p>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent transition-all" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/check:text-primary transition-colors">Nail Art (per nail) (+$5)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group/check">
+<input class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent transition-all" type="checkbox"/>
+<span class="text-sm text-gray-700 dark:text-gray-300 group-hover/check:text-primary transition-colors">Paraffin Dip (+$12)</span>
+</label>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xl font-bold text-[#141118] dark:text-white">$45.00</span>
+<button class="bg-primary hover:bg-[#7a25d0] text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors shadow-sm active:scale-95">
+                                            Select Service
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Loading / More -->
+<div class="w-full flex justify-center py-8">
+<button class="text-primary font-medium text-sm flex items-center gap-2 hover:bg-primary/5 px-4 py-2 rounded-lg transition-colors">
+<span>View more services</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Sticky Summary Cart -->
+<div class="w-full lg:w-[360px] shrink-0">
+<div class="sticky top-24 rounded-xl bg-white dark:bg-[#251a30] shadow-lg border border-[#f2f0f4] dark:border-gray-700 p-5 flex flex-col gap-5">
+<div class="flex items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4">
+<h3 class="text-lg font-bold text-[#141118] dark:text-white">Your Visit</h3>
+<span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">1 Item</span>
+</div>
+<!-- Cart Items -->
+<div class="flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="flex justify-between items-start gap-3 animate-in fade-in slide-in-from-bottom-2 duration-300">
+<div class="flex flex-col gap-1">
+<p class="text-sm font-bold text-[#141118] dark:text-white">Signature Cut &amp; Style</p>
+<p class="text-xs text-gray-500">60 min</p>
+<p class="text-xs text-primary">+ Deep Conditioning Mask</p>
+</div>
+<div class="flex flex-col items-end gap-1">
+<p class="text-sm font-bold text-[#141118] dark:text-white">$80.00</p>
+<button class="text-gray-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Summary Totals -->
+<div class="bg-background-light dark:bg-gray-800 rounded-lg p-4 flex flex-col gap-2 mt-2">
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-600 dark:text-gray-400">Total Duration</span>
+<span class="font-medium text-[#141118] dark:text-white">1 hr 0 min</span>
+</div>
+<div class="flex justify-between items-center text-base pt-2 border-t border-gray-200 dark:border-gray-700 mt-1">
+<span class="font-bold text-[#141118] dark:text-white">Total Price</span>
+<span class="font-black text-primary text-lg">$80.00</span>
+</div>
+</div>
+<!-- Action Button -->
+ <a href="templates/Services.html">
+    <button class="w-full bg-primary hover:bg-[#7a25d0] text-white text-base font-bold h-12 rounded-lg shadow-md hover:shadow-lg transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span>Book Appointment</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+ </a>
+
+<p class="text-center text-xs text-gray-400">No payment required today.</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

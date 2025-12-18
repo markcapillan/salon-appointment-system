@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Appointment Confirmation - Regine's Salon</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c2bee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#141118] font-display antialiased overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f2f0f4] bg-white px-10 py-3 dark:border-b-gray-800 dark:bg-[#191022]">
+<div class="flex items-center gap-4 text-[#141118] dark:text-white">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">content_cut</span>
+</div>
+<h2 class="text-[#141118] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Regine's Salon</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 hidden md:flex">
+<div class="flex items-center gap-9">
+<a class="text-[#141118] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-[#141118] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-[#141118] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">My Bookings</a>
+<a class="text-[#141118] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white dark:ring-gray-700 shadow-sm" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMDKWZ2bWXGjyC1mXvQS34gkdirzRQqalvr9b_crN5_j4u9iWICzrLKF71u5hi62NYCfDK9PxUxrhFfc0iTh9mc04SKz4PXVYHAkCkkFK1Rbw55CXf79ufmHHE15TbnPyenyesMsmaMie8rHKGiOjmoHJ_e6LvvIEciz0aIsLs0-KjXs4jE8ogfii2ClTjvSe7DXJdfW0J8AeLHiBo7vUqgiuTV8oZdL8u0lKdID0hOeDJLpG6SfwPGYNQ7Z2B16ygivms3_cLT7o");'></div>
+</div>
+<div class="md:hidden text-[#141118] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-40 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[640px] flex-1 w-full">
+<!-- Success Header -->
+<div class="flex flex-col items-center gap-6 px-4 py-6 text-center">
+<div class="flex items-center justify-center rounded-full bg-green-100 p-4 animate-bounce-short">
+<span class="material-symbols-outlined text-6xl text-green-600">check_circle</span>
+</div>
+<div class="flex max-w-[480px] flex-col items-center gap-2">
+<h1 class="text-[#141118] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">
+                                You're all set!
+                            </h1>
+<p class="text-[#141118] dark:text-gray-300 text-lg font-medium leading-normal">
+                                Your appointment is confirmed.
+                            </p>
+<p class="text-[#756189] dark:text-gray-400 text-sm font-normal leading-normal">
+                                Booking Reference: <span class="font-mono font-medium text-[#141118] dark:text-gray-200">#SAL-8920</span>. <br/>
+                                We've sent a confirmation email to jane@example.com.
+                            </p>
+</div>
+</div>
+<!-- Appointment Summary Card -->
+<div class="bg-white dark:bg-[#231a2e] rounded-xl shadow-sm border border-[#f2f0f4] dark:border-gray-800 overflow-hidden mb-6">
+<div class="px-6 pt-6 pb-2">
+<h2 class="text-[#141118] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Appointment Summary</h2>
+</div>
+<div class="flex flex-col">
+<!-- Service Item -->
+<div class="flex items-center gap-4 px-6 min-h-[72px] py-4 border-b border-[#f2f0f4] dark:border-gray-800 last:border-0">
+<div class="text-[#141118] dark:text-white flex items-center justify-center rounded-lg bg-[#f2f0f4] dark:bg-gray-700 shrink-0 size-12">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<div class="flex flex-col justify-center grow">
+<p class="text-[#141118] dark:text-white text-base font-medium leading-normal">Haircut &amp; Blowdry</p>
+<p class="text-[#756189] dark:text-gray-400 text-sm font-normal leading-normal">60 min duration • $85.00</p>
+</div>
+</div>
+<!-- Stylist Item -->
+<div class="flex items-center gap-4 px-6 min-h-[72px] py-4 border-b border-[#f2f0f4] dark:border-gray-800 last:border-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Stylist profile photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaeJ9RO9-qcadu3JI6BgFklgZ4Gp-dK7f_5nH3d5xlHFEoo1Bnlxnm0rLMPQ5tdtZNBLY0fi7tc69C2XtqcqRR-mmS3oEDoJ6bQd-xa790YyBx60p_gls6aFUzGMqcI84x2lqVhFp3r6pI9L5nkI_tbHB4ceJM7w2F_KAV13DOMXRTEWPMPCALATaT06DyG2B6MY1AE0QEj4R35leTdTWxIqTXcarYSemGR0FylqDYeeAdmupx0edid4AxoYzBbpU2qaHDgs8f7oI");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#141118] dark:text-white text-base font-medium leading-normal">Sarah Jenkins</p>
+<p class="text-[#756189] dark:text-gray-400 text-sm font-normal leading-normal">Senior Stylist</p>
+</div>
+</div>
+<!-- Date/Time Item -->
+<div class="flex items-center gap-4 px-6 min-h-[72px] py-4 border-b border-[#f2f0f4] dark:border-gray-800 last:border-0">
+<div class="text-[#141118] dark:text-white flex items-center justify-center rounded-lg bg-[#f2f0f4] dark:bg-gray-700 shrink-0 size-12">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#141118] dark:text-white text-base font-bold leading-normal text-primary">Friday, Oct 24th at 2:00 PM</p>
+<div class="flex gap-2 mt-1">
+<button class="text-xs font-medium text-[#756189] dark:text-gray-400 hover:text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add_circle</span> Add to Calendar
+                                        </button>
+</div>
+</div>
+</div>
+<!-- Location Item -->
+<div class="flex items-center gap-4 px-6 min-h-[72px] py-4">
+<div class="text-[#141118] dark:text-white flex items-center justify-center rounded-lg bg-[#f2f0f4] dark:bg-gray-700 shrink-0 size-12">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#141118] dark:text-white text-base font-medium leading-normal">Luxe Salon &amp; Spa</p>
+<p class="text-[#756189] dark:text-gray-400 text-sm font-normal leading-normal">123 Fashion Ave, New York, NY</p>
+</div>
+<div class="ml-auto">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg h-12 w-20 opacity-80" data-alt="Small map showing salon location" data-location="New York" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwOLmN5fmTS6mw88UQxXYoB8EZo4DFEXnSAJQFH0LNT4rE2evGA1F80J_ZvTQE-tLlJUyHjv5tXtp2199Y77vXPqbswF4as1IwTP9DHbwtsFhMEQW7RRbKwlvR-kMVfuUfnw65WYNsJJ46kg3kTMbM9TY_YXb2K5tUmuO7oJ-NdXNjNLcr9cCONYYojU04esygBasLgQ6T7IRQhC88iPmMuhBFnayV3BwNa7w_I3uPx6MQtWnLBCfYr_b6onkzhPUQUUb_YD_c7Ek");'></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Customer Details Section -->
+<div class="bg-white dark:bg-[#231a2e] rounded-xl shadow-sm border border-[#f2f0f4] dark:border-gray-800 p-6 mb-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-[#141118] dark:text-white text-lg font-bold">Contact Details</h3>
+<span class="text-xs text-[#756189] bg-[#f2f0f4] dark:bg-gray-800 dark:text-gray-300 px-2 py-1 rounded">Verified</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="text-xs text-[#756189] dark:text-gray-400 font-medium uppercase tracking-wide">Name</p>
+<p class="text-[#141118] dark:text-white font-medium">Jane Doe</p>
+</div>
+<div>
+<p class="text-xs text-[#756189] dark:text-gray-400 font-medium uppercase tracking-wide">Phone</p>
+<p class="text-[#141118] dark:text-white font-medium">(555) 123-4567</p>
+</div>
+<div class="md:col-span-2">
+<p class="text-xs text-[#756189] dark:text-gray-400 font-medium uppercase tracking-wide">Email</p>
+<p class="text-[#141118] dark:text-white font-medium">jane@example.com</p>
+</div>
+</div>
+</div>
+<!-- Smart Tip -->
+<div class="bg-primary/5 dark:bg-primary/20 border border-primary/20 rounded-xl p-4 flex gap-3 items-start mb-8">
+<span class="material-symbols-outlined text-primary mt-0.5">lightbulb</span>
+<div>
+<p class="text-[#141118] dark:text-white text-sm font-semibold">Smart Tip</p>
+<p class="text-[#756189] dark:text-gray-300 text-sm">Since you're getting a color service, we recommend arriving 10 minutes early for a quick consultation to finalize your shade selection.</p>
+</div>
+</div>
+<!-- Actions -->
+ 
+<div class="flex flex-col gap-4">
+<a class="flex w-full items-center justify-center rounded-xl bg-primary px-5 py-3.5 text-white text-base font-bold shadow-md hover:bg-[#7a25d0] transition-colors focus:ring-4 focus:ring-primary/30" href="../index.html">
+                            Back to Home
+                        </a>
+<div class="flex justify-center gap-6">
+<a class="text-sm font-medium text-[#756189] dark:text-gray-400 hover:text-[#141118] dark:hover:text-white transition-colors" href="resched.html">Reschedule</a>
+<a class="text-sm font-medium text-[#756189] dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors" href="cancel_appointment.html">Cancel Appointment</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

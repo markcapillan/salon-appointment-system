@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Profile - Luxe Salon</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c2bee",
+                        "primary-dark": "#6b1cb0",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#231a2e",
+                        "text-main": "#141118",
+                        "text-secondary": "#756189",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom toggle switch styles since we can't use JS */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #8c2bee;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #8c2bee;
+        }
+        
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e0dbe6; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cbbdd6; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white min-h-screen flex flex-col transition-colors duration-200">
+<!-- Top Navigation -->
+<header class="bg-surface-light dark:bg-surface-dark border-b border-[#f2f0f4] dark:border-gray-800 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="text-primary p-1 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-[24px]">content_cut</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-text-main dark:text-white">Luxe Salon</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="../index.html">Home</a>
+<a class="text-sm font-medium text-text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="Services.html">Services</a>
+<a class="text-sm font-medium text-text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="upcoming_appointment.html">My Bookings</a>
+<a class="text-sm font-medium text-primary dark:text-primary transition-colors" href="#">Profile</a>
+</nav>
+<!-- Profile Menu -->
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-text-secondary dark:text-gray-400 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-9 w-9 rounded-full bg-cover bg-center border border-gray-200 dark:border-gray-700 shadow-sm cursor-pointer" data-alt="Profile picture of a woman with curly hair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhg8qqlPoawP2bl_ZFvKN4dvXtB2-1QobMqwUXcyTDkXyte3wbqYPwV-4TuUSZIQesC0jQqRx0nlz3H96G2-NmREVKDb0dtMB8kdkWKnsKC7Ctdvkmk2fE-JC11X0IASdL6q4849hCPmHPxR_JC0Efa0pJi1kLBRYq9QPx2rpMPcIueyzUtQGUIMCsBGa1CwSmCla4IqmbGaokOv2QnEIUd5oRz1BOU0P71Si8PU7ZI943n3Y4GYAU9tFUJAcGrtrqEbi609MRhUs");'>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Page Header -->
+<div class="mb-8">
+<h1 class="text-3xl font-black tracking-tight text-text-main dark:text-white mb-2">Customer Profile</h1>
+<p class="text-text-secondary dark:text-gray-400">Manage your personal details, preferences, and view your loyalty status.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Left Sidebar (Profile Overview) -->
+<aside class="w-full lg:w-1/3 xl:w-1/4 space-y-6">
+<!-- Profile Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e0dbe6] dark:border-gray-800 p-6 shadow-sm flex flex-col items-center text-center">
+<div class="relative mb-4 group cursor-pointer">
+<div class="w-28 h-28 rounded-full bg-cover bg-center border-4 border-white dark:border-gray-700 shadow-md" data-alt="Portrait of Jane Doe looking confident" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAy4E4dXOrSg8j87w0UliZrI4O4GjN15FZT45tRsTF224qPONYUsn8q84Zrq7QmLRVVDWUKj_2iWKyOPupORJzg389v8yVUWP21ukxfrDFk4TphwNr3W4B7FCuWLCI6Xl2LWil8TUq333O6LOJXucduObVnAt7g1PshW7mFgb2O3CuBx3_rjZ5dqMAzBkQ5kbgYLbQqRHs79obn_phK4xpgGWgm08Zai9NKuu_Kk6veixIypnSmTwPkrQUPTjVL9-F21JWpGSeWgKQ");'>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full shadow-sm border-2 border-white dark:border-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</div>
+</div>
+<h2 class="text-xl font-bold text-text-main dark:text-white">Jane Doe</h2>
+<div class="flex items-center gap-1.5 mt-1 mb-4">
+<span class="material-symbols-outlined text-amber-400 text-[18px] fill-1">workspace_premium</span>
+<span class="text-sm font-medium text-amber-600 dark:text-amber-400">Gold Member</span>
+</div>
+<p class="text-xs text-text-secondary dark:text-gray-500 uppercase tracking-wide font-medium">Member since 2021</p>
+</div>
+<!-- Loyalty Status -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e0dbe6] dark:border-gray-800 p-6 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">loyalty</span>
+                            Loyalty Points
+                        </h3>
+</div>
+<div class="flex flex-col gap-1 mb-4">
+<span class="text-3xl font-black text-text-main dark:text-white">1,250</span>
+<span class="text-sm text-text-secondary dark:text-gray-400">Total available points</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-text-main dark:text-gray-300">Platinum Status</span>
+<span class="text-primary">75%</span>
+</div>
+<div class="h-2 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%"></div>
+</div>
+<p class="text-xs text-text-secondary dark:text-gray-500 mt-2">Earn 450 more points to reach Platinum tier and unlock exclusive spa treatments.</p>
+</div>
+</div>
+<!-- Quick Navigation (Sidebar) -->
+<nav class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e0dbe6] dark:border-gray-800 shadow-sm overflow-hidden">
+<a class="flex items-center gap-3 px-6 py-4 border-l-4 border-primary bg-primary/5 text-primary font-medium" href="#">
+<span class="material-symbols-outlined">person</span>
+                        Personal Details
+                    </a>
+<a class="flex items-center gap-3 px-6 py-4 border-l-4 border-transparent text-text-secondary dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">lock</span>
+                        Security
+                    </a>
+<a class="flex items-center gap-3 px-6 py-4 border-l-4 border-transparent text-text-secondary dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">credit_card</span>
+                        Payment Methods
+                    </a>
+<div class="h-px bg-gray-100 dark:bg-gray-800 mx-6"></div>
+<button class="w-full flex items-center gap-3 px-6 py-4 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors text-left">
+<span class="material-symbols-outlined">logout</span>
+                        Log Out
+                    </button>
+</nav>
+</aside>
+<!-- Right Content (Forms & History) -->
+<section class="flex-1 space-y-6">
+<!-- Personal Information Form -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e0dbe6] dark:border-gray-800 shadow-sm">
+<div class="px-6 py-5 border-b border-[#f2f0f4] dark:border-gray-800 flex justify-between items-center">
+<h2 class="text-lg font-bold text-text-main dark:text-white">Personal Information</h2>
+<button class="text-sm font-medium text-primary hover:text-primary-dark dark:hover:text-purple-300">Edit Details</button>
+</div>
+<div class="p-6">
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1.5">
+<label class="text-sm font-medium text-text-secondary dark:text-gray-400" for="firstName">First Name</label>
+<input class="w-full px-4 py-2.5 rounded-lg border border-[#e0dbe6] dark:border-gray-700 bg-white dark:bg-gray-800/50 text-text-main dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" id="firstName" type="text" value="Jane"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-medium text-text-secondary dark:text-gray-400" for="lastName">Last Name</label>
+<input class="w-full px-4 py-2.5 rounded-lg border border-[#e0dbe6] dark:border-gray-700 bg-white dark:bg-gray-800/50 text-text-main dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" id="lastName" type="text" value="Doe"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-medium text-text-secondary dark:text-gray-400" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400 text-[20px]">mail</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[#e0dbe6] dark:border-gray-700 bg-white dark:bg-gray-800/50 text-text-main dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" id="email" type="email" value="jane.doe@example.com"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-medium text-text-secondary dark:text-gray-400" for="phone">Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400 text-[20px]">call</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[#e0dbe6] dark:border-gray-700 bg-white dark:bg-gray-800/50 text-text-main dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" id="phone" type="tel" value="+1 (555) 123-4567"/>
+</div>
+</div>
+</form>
+<div class="mt-8 flex justify-end">
+<button class="px-6 py-2.5 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg shadow-sm shadow-primary/30 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                                Save Changes
+                            </button>
+</div>
+</div>
+</div>
+<!-- Communication Preferences -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e0dbe6] dark:border-gray-800 shadow-sm">
+<div class="px-6 py-5 border-b border-[#f2f0f4] dark:border-gray-800">
+<h2 class="text-lg font-bold text-text-main dark:text-white">Communication Preferences</h2>
+<p class="text-sm text-text-secondary dark:text-gray-400 mt-1">Manage how you want to be notified about appointments and offers.</p>
+</div>
+<div class="p-6 space-y-6">
+<!-- Toggle Item 1 -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-medium text-text-main dark:text-white">Appointment Reminders</span>
+<span class="text-sm text-text-secondary dark:text-gray-400">Receive reminders 24h before your booking</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-gray-300 dark:border-gray-600 checked:right-0 transition-all duration-300" id="reminders" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer" for="reminders"></label>
+</div>
+</div>
+<!-- Toggle Item 2 -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-medium text-text-main dark:text-white">Email Promotions</span>
+<span class="text-sm text-text-secondary dark:text-gray-400">Receive exclusive offers and beauty tips</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-gray-300 dark:border-gray-600 checked:right-0 transition-all duration-300" id="marketing" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer" for="marketing"></label>
+</div>
+</div>
+<!-- Toggle Item 3 -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-medium text-text-main dark:text-white">SMS Notifications</span>
+<span class="text-sm text-text-secondary dark:text-gray-400">Get text messages for urgent updates</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-gray-300 dark:border-gray-600 checked:right-0 transition-all duration-300" id="sms" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer" for="sms"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Table -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-[#e0dbe6] dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="px-6 py-5 border-b border-[#f2f0f4] dark:border-gray-800 flex justify-between items-center">
+<h2 class="text-lg font-bold text-text-main dark:text-white">Recent Appointments</h2>
+<a class="text-sm font-medium text-primary hover:text-primary-dark dark:hover:text-purple-300 flex items-center gap-1" href="#">
+                            View all
+                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-background-light dark:bg-white/5 text-xs uppercase tracking-wider text-text-secondary dark:text-gray-400 border-b border-[#f2f0f4] dark:border-gray-700">
+<th class="px-6 py-4 font-semibold">Service</th>
+<th class="px-6 py-4 font-semibold">Date &amp; Time</th>
+<th class="px-6 py-4 font-semibold">Stylist</th>
+<th class="px-6 py-4 font-semibold">Status</th>
+<th class="px-6 py-4 font-semibold text-right">Price</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f2f0f4] dark:divide-gray-700">
+<!-- Upcoming Row -->
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-800 bg-cover bg-center" data-alt="Close up of hair coloring process" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0Frbi3KHOhoETkpZVmCrtWS07KcHlB3zP9XxIR41qFOb5E-6hRE2ImmiWBF3Uyz0BkNH0kwbhNkNQl1BUESNcOE6gleYsQnqqNUNyn3U1kzNmNIJilxKQWzKKCaO5rksBVu-KRCBxj-FPwZBd37zHFqbmFA5HQDy2xctWyrbInE7bVFPGyTtiy6oKRBZHgbsmPphM9HbfRq-AUi_Mv5uDhztDfgcKYnEXIyD6Pv4pbe_6KlCZWurW13DpjoagQED6j6s8cq3A7ks");'></div>
+<div>
+<p class="font-medium text-text-main dark:text-white">Full Color &amp; Style</p>
+<p class="text-xs text-text-secondary dark:text-gray-400">90 mins</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm text-text-main dark:text-gray-300">Nov 14, 2023</p>
+<p class="text-xs text-text-secondary dark:text-gray-500">10:00 AM</p>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-gray-300">Sarah M.</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                            Upcoming
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-right text-text-main dark:text-white">$120.00</td>
+</tr>
+<!-- Completed Row -->
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-800 bg-cover bg-center" data-alt="Scissors cutting hair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBw6IQrN77V20-7yFLu7aISg1-xbiwN8OzNvbnXspWpNUXXsoW6aXDLPaSGuS301D0c_RO2rHOGo3gchDBGi37IR6NxGDzRdxt-JPdb-nyT1Pw4_5dL2uFA3L6QN7YIhiCTucx-xxv917veAHzAC9uxq7jr2mtNTaR2cld30yj09zej8rmvxsDpzMndQpcEHNs-aLgLxEfi9DKH7adBcw4_WMnYha9-y8FwiiacUCXEtceYQXARhfOnIlOxRRwhywDLEtRflZMEwj4");'></div>
+<div>
+<p class="font-medium text-text-main dark:text-white">Haircut</p>
+<p class="text-xs text-text-secondary dark:text-gray-400">45 mins</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm text-text-main dark:text-gray-300">Oct 24, 2023</p>
+<p class="text-xs text-text-secondary dark:text-gray-500">2:30 PM</p>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-gray-300">Michael R.</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-600 border border-emerald-100 dark:bg-emerald-900/20 dark:text-emerald-400 dark:border-emerald-900/30">
+                                            Completed
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-right text-text-main dark:text-white">$65.00</td>
+</tr>
+<!-- Cancelled Row -->
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-gray-100 dark:bg-gray-800 bg-cover bg-center" data-alt="Manicure hands" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQiOwFnv7v_AQZFHFUOv8IeXuOg23SR5_PsmZeQ7tg-0cjj4kLFFPQaop_mr8keB9Fgd7qOQ7_ileIDEso2VUSY4A3hta_DYTbexS2enG1kK5GXheiWeL-4RpCp2Vj4GuFtI9PTztQSF_5mt0jG4TeOjI1PYgie9t8BjWA6H8EMSKp9oQgL_KIg7xBECuU0-pTpJ27cb8w1oCihCBBjLRZbNx9Txa-VM-UFrqCfFynfS3yLngfS4LOwBElvWBXf1d4sdhyAb697-E");'></div>
+<div>
+<p class="font-medium text-text-main dark:text-white">Manicure</p>
+<p class="text-xs text-text-secondary dark:text-gray-400">30 mins</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm text-text-main dark:text-gray-300">Sep 10, 2023</p>
+<p class="text-xs text-text-secondary dark:text-gray-500">11:00 AM</p>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-gray-300">Jessica L.</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-700">
+                                            Canceled
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-right text-text-main dark:text-white">$35.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>
